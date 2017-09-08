@@ -1,0 +1,167 @@
+.no-grid {
+  background-image: none !important;
+}
+
+$show-grid-visual: true;
+
+$columns-count--mobile: 4;
+$columns-count--portrait: 6;
+$columns-count--landscape: 12;
+$columns-count--desktop: 12;
+
+$grid-max-width--mobile: 640px;
+$grid-max-width--portrait: 800px;
+$grid-max-width--landscape: 1180px;
+$grid-max-width--desktop: 1220px;
+$grid-max-width--canvas: 1440px;
+
+$grid-offset: 110px;
+
+
+$grid-media--mobile: (
+  columns: $columns-count--mobile,
+  gutter: 16px,
+  media: 0px,
+);
+
+$grid-media--portrait: (
+  columns: $columns-count--portrait,
+  gutter: 16px,
+  media: 640px,
+);
+
+$grid-media--landscape: (
+  columns: $columns-count--landscape,
+  gutter: 16px,
+  media: 800px,
+);
+
+$grid-media--desktop: (
+  columns: $columns-count--desktop,
+  gutter: 20px,
+  media: 1180px,
+);
+
+$grid-media--canvas: (
+  columns: $columns-count--desktop,
+  gutter: 20px,
+  media: 1440px,
+);
+
+
+@mixin layout($mobile: $columns-count--mobile, $portrait: $columns-count--portrait, $landscape: $columns-count--landscape, $desktop: $columns-count--desktop, $gutter: -1, $direction: "ltr") {
+
+  $props: (
+    direction: $direction
+  );
+
+  @if $gutter != -1 {
+    $props: map-merge($props, (gutter: $gutter));
+  }
+
+  @include grid-media($grid-media--mobile) {
+    @include grid-column($mobile, $props);
+  }
+  @include grid-media($grid-media--portrait) {
+    @include grid-column($portrait, $props);
+  }
+  @include grid-media($grid-media--landscape) {
+    @include grid-column($landscape, $props);
+  }
+  @include grid-media($grid-media--desktop) {
+    @include grid-column($desktop, $props);
+  }
+}
+
+@mixin container() {
+
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  @include clearfix;
+  @include grid-media($grid-media--mobile) {
+    max-width: $grid-max-width--mobile;
+  }
+  @include grid-media($grid-media--portrait) {
+    max-width: $grid-max-width--portrait;
+  }
+  @include grid-media($grid-media--landscape) {
+    max-width: $grid-max-width--landscape;
+  }
+  @include grid-media($grid-media--desktop) {
+    max-width: $grid-max-width--desktop;
+  }
+
+  @if $show-grid-visual == false {
+    @include grid-media($grid-media--mobile) {
+      @include grid-visual( rgba(purple, .2) );
+    }
+    @include grid-media($grid-media--portrait) {
+      @include grid-visual( rgba(red, .2) );
+    }
+    @include grid-media($grid-media--landscape) {
+      @include grid-visual( rgba(orange, .2) );
+    }
+    @include grid-media($grid-media--desktop) {
+      @include grid-visual( rgba(yellow, .2) );
+    }
+    @include grid-media($grid-media--canvas) {
+      @include grid-visual( rgba(brown, .2) );
+    }
+  }
+}
+
+
+$grid-media--full-desktop: (
+  columns: $columns-count--desktop,
+  gutter: 20px,
+  media: 100%,
+);
+
+@mixin container-full() {
+  @include clearfix;
+  float: none;
+  margin-right: auto;
+  padding: 0;
+
+  @include grid-media($grid-media--full-desktop) {
+    max-width: $grid-max-width--desktop;
+  }
+
+  @if $show-grid-visual == true {
+    @include grid-media($grid-media--canvas) {
+      @include grid-visual( rgba(brown, .2) );
+    }
+  }
+}
+
+@mixin offset($offset-mobile: 0, $offset-portrait: 0, $offset-landscape: 0, $offset-desktop: 0) {
+  @include grid-media($grid-media--mobile) {
+    @include grid-push($offset-mobile, $grid-media--mobile);
+  }
+  @include grid-media($grid-media--portrait) {
+    @include grid-push($offset-portrait, $grid-media--portrait);
+  }
+  @include grid-media($grid-media--landscape) {
+    @include grid-push($offset-landscape, $grid-media--landscape);
+  }
+  @include grid-media($grid-media--desktop) {
+    @include grid-push($offset-desktop, $grid-media--desktop);
+  }
+}
+
+@mixin shift($shift-mobile: 0, $shift-portrait: 0, $shift-landscape: 0, $shift-desktop: 0) {
+  @include grid-media($grid-media--mobile) {
+    @include grid-shift($shift-mobile, $grid-media--mobile);
+  }
+  @include grid-media($grid-media--portrait) {
+    @include grid-shift($shift-portrait, $grid-media--portrait);
+  }
+  @include grid-media($grid-media--landscape) {
+    @include grid-shift($shift-landscape, $grid-media--landscape);
+  }
+  @include grid-media($grid-media--desktop) {
+    @include grid-shift($shift-desktop, $grid-media--desktop);
+  }
+}
