@@ -16,7 +16,6 @@ body {
 #top, #bottom, #left, #right {
   background: rgb(24, 63, 99);
   position: fixed;
-
 }
 
 #left, #right {
@@ -136,12 +135,6 @@ body {
     padding: 100px;
   }
 
-  h1 {
-    font-family: 'Libre Barcode 39 Text', cursive;
-    font-weight: normal;
-    font-size: 72px;
-    margin: 0;
-  }
 }
 
 .mainnav {
@@ -215,27 +208,17 @@ span {
   left: 0;
   right: 0;
   margin: auto;
+  z-index: -3;
 
-  &__resume {
-    background-size: contain;
-    background-repeat: no-repeat;
-    height: 500px;
-    position: relative;
-    margin: -48px;
-    z-index: -3;
-    background-image: url("PeriResume.png");
-    background-position: center center;
+  &__index {
 
-    @include grid-media($grid-media--landscape) {
-      background-size: contain;
-      background-repeat: no-repeat;
-      height: 791px;
-      position: relative;
-      z-index: -3;
-      background-image: url("PeriResume.png");
-      background-position: center center;
-
+    h1 {
+      font-family: 'Libre Barcode 39 Text', cursive;
+      font-weight: normal;
+      font-size: 72px;
+      margin: 0;
     }
+
   }
 
   &__about {
@@ -243,34 +226,26 @@ span {
     h1, h2, h3, h4 {
       font-family: 'Roboto', sans-serif;
       font-weight: 400;
-      position: relative;
       transform: rotate(45deg);
-      z-index: 2;
+      position: absolute;
     }
-  }
-}
-@keyframes move {
-  25% {
-    transform: rotate(180deg);
-  }
-}
 
-.animate {
-  -webkit-animation: move 2s;
-  -moz-animation: move 2s;
-  -webkit-animation-iteration-count: 1;
-  -moz-animation-iteration-count: 1;
-}
+  }
 
-.cards {
-    @include container;
+  .cards {
+    position: absolute;
     &__container {
-      @include layout(4, 3, 4, 4);
       background-repeat: no-repeat;
-      height: 258px;
-      margin-top: 30px;
+      height: 178px;
+      width: 176px;
+      margin: 5px;
+      display: inline-block;
       position: relative;
-      z-index: 1;
+      border-radius: 50%;
+    }
+
+    &__container:hover {
+      opacity: .8;
     }
 
     &-section {
@@ -278,11 +253,12 @@ span {
     }
 
     &__text {
-      background-color: black;
+      background-color: transparent;
       height: 100%;
       bottom: 0;
       left: 0;
-      top: 0;
+      top: 60px;
+      border-radius: 50%;
       position: absolute;
       opacity: 0;
       width: 100%;
@@ -296,20 +272,71 @@ span {
 
     &__overlay-text {
       color: white;
+      font-family: 'Roboto', sans-serif;
       font-size: 40px;
       position: relative;
-      padding: 70px;
     }
 
     &__title {
       font-size: 28px;
     }
 
-  #cards__1 {
-    background-color: #9fe8b9;
-  }
+    #cards__1 {
+      background-color: #9fe8b9;
+    }
+
+    #cards__2 {
+      background-color: #AEB1F1;
+    }
+
+    #cards__3 {
+      background-color: #ff7d93
+    }
+
+    #cards__4 {
+      background-color: #9D314A;
+    }
+
+    #cards__5 {
+      background-color: #532657;
+    }
 
   }
 
+  &__resume {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 500px;
+    position: relative;
+    margin: -48px;
+    padding: 0;
+    z-index: -3;
+    background-image: url("PeriResume.png");
+    background-position: center center;
+
+    @include grid-media($grid-media--landscape) {
+      background-size: contain;
+      background-repeat: no-repeat;
+      height: 791px;
+      position: relative;
+      z-index: -3;
+      background-image: url("PeriResume.png");
+      background-position: center center;
+    }
+  }
+}
+
+@keyframes move {
+  25% {
+    transform: rotate(180deg);
+  }
+}
+
+.animate {
+  -webkit-animation: move 2s;
+  -moz-animation: move 2s;
+  -webkit-animation-iteration-count: 1;
+  -moz-animation-iteration-count: 1;
+}
 
 
