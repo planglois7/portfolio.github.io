@@ -128,11 +128,6 @@ body {
   @media only screen and (min-width: 800px) {
     .main {
       padding: 100px; } }
-  .main h1 {
-    font-family: 'Libre Barcode 39 Text', cursive;
-    font-weight: normal;
-    font-size: 72px;
-    margin: 0; }
 
 .mainnav {
   height: 100%;
@@ -193,13 +188,70 @@ span {
   bottom: 0;
   left: 0;
   right: 0;
-  margin: auto; }
+  margin: auto;
+  z-index: -3; }
+  .mainContent__index h1 {
+    font-family: 'Libre Barcode 39 Text', cursive;
+    font-weight: normal;
+    font-size: 72px;
+    margin: 0; }
+  .mainContent__about h1, .mainContent__about h2, .mainContent__about h3, .mainContent__about h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    transform: rotate(45deg);
+    position: absolute; }
+  .mainContent .cards {
+    position: absolute; }
+    .mainContent .cards__container {
+      background-repeat: no-repeat;
+      height: 178px;
+      width: 176px;
+      margin: 5px;
+      display: inline-block;
+      position: relative;
+      border-radius: 50%; }
+    .mainContent .cards__container:hover {
+      opacity: .8; }
+    .mainContent .cards-section {
+      box-shadow: 0 1px 5px grey; }
+    .mainContent .cards__text {
+      background-color: transparent;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      top: 60px;
+      border-radius: 50%;
+      position: absolute;
+      opacity: 0;
+      width: 100%;
+      text-align: center;
+      transition: opacity 500ms ease-in; }
+    .mainContent .cards__text:hover {
+      opacity: .9; }
+    .mainContent .cards__overlay-text {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 40px;
+      position: relative; }
+    .mainContent .cards__title {
+      font-size: 28px; }
+    .mainContent .cards #cards__1 {
+      background-color: #9fe8b9; }
+    .mainContent .cards #cards__2 {
+      background-color: #AEB1F1; }
+    .mainContent .cards #cards__3 {
+      background-color: #ff7d93; }
+    .mainContent .cards #cards__4 {
+      background-color: #9D314A; }
+    .mainContent .cards #cards__5 {
+      background-color: #532657; }
   .mainContent__resume {
     background-size: contain;
     background-repeat: no-repeat;
     height: 500px;
     position: relative;
     margin: -48px;
+    padding: 0;
     z-index: -3;
     background-image: url("PeriResume.png");
     background-position: center center; }
@@ -212,12 +264,6 @@ span {
         z-index: -3;
         background-image: url("PeriResume.png");
         background-position: center center; } }
-  .mainContent__about h1, .mainContent__about h2, .mainContent__about h3, .mainContent__about h4 {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    position: relative;
-    transform: rotate(45deg);
-    z-index: 2; }
 
 @keyframes move {
   25% {
@@ -227,77 +273,5 @@ span {
   -moz-animation: move 2s;
   -webkit-animation-iteration-count: 1;
   -moz-animation-iteration-count: 1; }
-
-.cards {
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0; }
-  .cards::after {
-    content: '';
-    clear: both;
-    display: table; }
-  @media only screen and (min-width: 0px) {
-    .cards {
-      max-width: 640px; } }
-  @media only screen and (min-width: 640px) {
-    .cards {
-      max-width: 800px; } }
-  @media only screen and (min-width: 800px) {
-    .cards {
-      max-width: 1180px; } }
-  @media only screen and (min-width: 1180px) {
-    .cards {
-      max-width: 1220px; } }
-  .cards__container {
-    background-repeat: no-repeat;
-    height: 258px;
-    margin-top: 30px;
-    position: relative;
-    z-index: 1; }
-    @media only screen and (min-width: 0px) {
-      .cards__container {
-        width: calc(100% - 32px);
-        float: left;
-        margin-left: 16px; } }
-    @media only screen and (min-width: 640px) {
-      .cards__container {
-        width: calc(50% - 24px);
-        float: left;
-        margin-left: 16px; } }
-    @media only screen and (min-width: 800px) {
-      .cards__container {
-        width: calc(33.33333% - 21.33333px);
-        float: left;
-        margin-left: 16px; } }
-    @media only screen and (min-width: 1180px) {
-      .cards__container {
-        width: calc(33.33333% - 26.66667px);
-        float: left;
-        margin-left: 20px; } }
-  .cards-section {
-    box-shadow: 0 1px 5px grey; }
-  .cards__text {
-    background-color: black;
-    height: 100%;
-    bottom: 0;
-    left: 0;
-    top: 0;
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-    text-align: center;
-    transition: opacity 500ms ease-in; }
-  .cards__text:hover {
-    opacity: .9; }
-  .cards__overlay-text {
-    color: white;
-    font-size: 40px;
-    position: relative;
-    padding: 70px; }
-  .cards__title {
-    font-size: 28px; }
-  .cards #cards__1 {
-    background-color: #9fe8b9; }
 
 /*# sourceMappingURL=output.css.map */
