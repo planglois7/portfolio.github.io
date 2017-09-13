@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Work</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39+Text" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+
+
+    <link rel="stylesheet" href="output.css">
+</head>
+<body>
+
+<div id="left"><p></p></div>
+<div id="left-2"></div>
+<div id="left-3"></div>
+
+<div id="right"></div>
+<div id="right-2"></div>
+<div id="right-3"></div>
+
+<div id="top"></div>
+<div id="top-2"></div>
+<div id="top-3"></div>
+
+
+<div id="bottom"></div>
+<div id="bottom-2"></div>
+<div id="bottom-3"></div>
+<span class="open" onclick="openNav()">&#9776;</span>
+
+
+<div id="mainNav" class="mainnav">
+    <a href="javascript:void(0)" class="closebtn"
+       onclick="closeNav()">&times;</a>
+    <div class="mainnav__links">
+        <a class="link" href="index.html">Home</a>
+        <a class="link" href="work.html">Work</a>
+        <a class="link" href="resume.html">Resume</a>
+    </div>
+</div>
+
+<div class="main" id="Main">
+    <div class="mainContent">
+        <div class="mainContent__work">
+
+            <div class="cards">
+                <div class="cards__container" id="cards__1">
+                    <section class="cards-section">
+                        <div class="cards__text">
+                            <div class="cards__overlay">
+                                <div class="cards__overlay-text">
+                                    hey
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+
+                <div class="cards__container" id="cards__2">
+                    <section class="cards-section">
+                        <div class="cards__text">
+                            <div class="cards__overlay">
+                                <div class="cards__overlay-text">
+                                    hey
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="cards__container" id="cards__3">
+                    <section class="cards-section">
+                        <div class="cards__text">
+                            <div class="cards__overlay">
+                                <div class="cards__overlay-text">
+                                    hey
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                 <div class="cards__container" id="cards__4">
+                    <section class="cards-section">
+                        <div class="cards__text">
+                            <div class="cards__overlay">
+                                <div class="cards__overlay-text">
+                                    hey
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                 <div class="cards__container" id="cards__5">
+                    <section class="cards-section">
+                        <div class="cards__text">
+                            <div class="cards__overlay">
+                                <div class="cards__overlay-text">
+                                    hey
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $('.open').click(function () {
+        $target = $('.link');
+        $target.removeClass('animate');
+        setTimeout("$target.addClass('animate');", 100)
+    });
+</script>
+
+</body>
+</html>
