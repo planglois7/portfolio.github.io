@@ -198,7 +198,6 @@ span {
   .mainContent__about h1, .mainContent__about h2, .mainContent__about h3, .mainContent__about h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    transform: rotate(45deg);
     position: absolute; }
   .mainContent .cards {
     position: absolute; }
