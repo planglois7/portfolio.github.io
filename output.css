@@ -221,7 +221,7 @@ span {
       top: 60px;
       border-radius: 50%;
       position: absolute;
-      opacity: 0;
+      opacity: .9;
       width: 100%;
       text-align: center;
       transition: opacity 500ms ease-in; }
