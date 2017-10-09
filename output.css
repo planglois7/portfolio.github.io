@@ -230,7 +230,8 @@ span {
     .mainContent .cards__overlay-text {
       color: white;
       font-family: 'Roboto', sans-serif;
-      font-size: 40px;
+       font-size: 18px;
+      text-decoration: none; 
       position: relative; }
     .mainContent .cards__title {
       font-size: 28px; }
